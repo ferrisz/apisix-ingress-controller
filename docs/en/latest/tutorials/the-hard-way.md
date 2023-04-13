@@ -497,7 +497,7 @@ First we will create a ServiceAccount and a corresponding ClusterRole to ensure 
 ```bash
 git clone https://github.com/apache/apisix-ingress-controller.git --depth 1
 cd apisix-ingress-controller/
-kubectl apply -k samples/deploy/rbac/apisix_view_clusterrole.yaml # apply cluster role
+kubectl apply -f samples/deploy/rbac/apisix_view_clusterrole.yaml # apply cluster role
 kubectl -n apisix create serviceaccount apisix-ingress-controller # create service account
 # bind cluster role and service account
 kubectl create clusterrolebinding apisix-viewer --clusterrole=apisix-view-clusterrole --serviceaccount=apisix:apisix-ingress-controller
